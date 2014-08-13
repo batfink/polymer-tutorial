@@ -17,7 +17,7 @@ gulp.task('reload', function() {
 })
 
 gulp.task('watch', function() {
-    gulp.watch([path.join(root, '**/*')], ['reload'])
+    gulp.watch(path.join(root, '**/*'), ['reload'])
 })
 
 gulp.task('open', function() {

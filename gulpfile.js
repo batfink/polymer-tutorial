@@ -2,13 +2,13 @@ var gulp = require('gulp');
 var connect = require('gulp-connect');
 var path = require('path');
 var open = require('gulp-open');
-var root = 'app';
+var root = 'app', port = 9000;
 
 gulp.task('connect', function() {
     connect.server({
         root: root,
         livereload: true,
-        port: 9000
+        port: port
     })
 })
 
@@ -22,7 +22,7 @@ gulp.task('watch', function() {
 
 gulp.task('open', function() {
     gulp.src(path.join(root, 'starter/index.html'))
-        .pipe(open('', { url: 'http://localhost:9000/starter/' }));
+        .pipe(open('', { url: 'http://localhost:'+ port +'/starter/' }));
 })
 
 gulp.task('default', ['connect', 'open', 'watch']);

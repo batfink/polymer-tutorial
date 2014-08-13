@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 var path = require('path');
-var root = 'starter';
+var root = 'app';
 
 gulp.task('connect', function() {
     connect.server({
@@ -16,7 +16,7 @@ gulp.task('reload', function() {
 })
 
 gulp.task('watch', function() {
-    gulp.watch([path.join(root, '*')], ['reload'])
+    gulp.watch([path.join(root, '**/*')], ['reload'])
 })
 
 gulp.task('default', ['connect', 'watch']);
